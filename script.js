@@ -350,6 +350,10 @@ function drawText() {
 function draw() {
   context.putImageData(baseFrame, 0, 0);
 
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+  audio.play();
+
   drawStars();
   updateStars();
   drawText();
@@ -366,8 +370,4 @@ window.addEventListener("resize", function () {
   baseFrame = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
 });
 
-
-const audio = document.querySelector("audio");
-audio.volume = 0.2;
-audio.play();
 window.requestAnimationFrame(draw);
